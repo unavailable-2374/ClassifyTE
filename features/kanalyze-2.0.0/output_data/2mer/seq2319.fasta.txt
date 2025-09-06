@@ -1,9 +1,0 @@
-AA	5
-AG	13
-AT	6
-GA	5
-GG	18
-GT	12
-TA	14
-TG	5
-TT	17

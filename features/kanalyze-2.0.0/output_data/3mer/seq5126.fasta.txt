@@ -1,4 +1,0 @@
-ATG	91
-GAT	91
-GGA	91
-TGG	95

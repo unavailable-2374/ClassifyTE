@@ -1,4 +1,0 @@
-ATC	34
-CAT	33
-CCA	34
-TCC	34

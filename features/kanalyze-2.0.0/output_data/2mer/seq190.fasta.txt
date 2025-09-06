@@ -1,9 +1,0 @@
-AG	8
-CA	9
-CC	41
-CG	39
-CT	9
-GC	57
-GG	93
-GT	34
-TG	44

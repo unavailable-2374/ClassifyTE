@@ -1,8 +1,0 @@
-AC	1
-AG	1
-AT	16
-CA	1
-GT	18
-TA	17
-TG	17
-TT	2
