@@ -1,0 +1,7 @@
+AA	2
+AC	5
+AG	35
+CA	5
+GA	36
+GT	9
+TG	9

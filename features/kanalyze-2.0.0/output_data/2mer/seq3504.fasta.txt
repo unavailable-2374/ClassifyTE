@@ -1,0 +1,12 @@
+AA	38
+AC	4
+AG	26
+AT	2
+CA	2
+CG	2
+CT	1
+GA	28
+GG	23
+TA	3
+TC	1
+TT	3

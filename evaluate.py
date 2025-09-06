@@ -16,15 +16,38 @@ from HierStack.stackingClassifier import *
 
 def getSequenceName(curr_dir, feature_folder):
 	input_files_dir = os.path.join(curr_dir + feature_folder) + "/kanalyze-2.0.0/input_data/"
-	_, _, files = next(os.walk(input_files_dir))
-	files = sorted(files)
+	try:
+		_, _, files = next(os.walk(input_files_dir))
+	except StopIteration:
+		print(f"Error: Directory '{input_files_dir}' does not exist or is empty.")
+		print(f"Make sure you have run feature generation for the '{feature_folder.strip('/')}' directory first.")
+		sys.exit(1)
+	
+	fasta_files = [f for f in files if f.endswith('.fasta')]
+	fasta_files = sorted(fasta_files)
 	seqIDs = []
-	for file in files:
-		f = open(input_files_dir + file,"r")
-		header = f.readline()
-		head = header.split(">")
-		ID = head[1]
-		seqIDs.append(ID)
+	
+	for file in fasta_files:
+		try:
+			with open(input_files_dir + file, "r") as f:
+				header = f.readline().strip()
+				if header.startswith('>'):
+					head = header.split(">")
+					if len(head) > 1:
+						ID = head[1]
+						seqIDs.append(ID)
+					else:
+						print(f"Warning: Invalid header format in file {file}: {header}")
+				else:
+					print(f"Warning: File {file} does not start with FASTA header")
+		except Exception as e:
+			print(f"Error reading file {file}: {e}")
+			continue
+	
+	if not seqIDs:
+		print(f"Error: No valid FASTA files found in {input_files_dir}")
+		sys.exit(1)
+		
 	return seqIDs
 
 def getLabel(content, predicted):

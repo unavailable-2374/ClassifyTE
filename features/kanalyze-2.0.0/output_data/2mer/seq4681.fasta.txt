@@ -1,0 +1,15 @@
+AA	28
+AC	8
+AG	16
+AT	20
+CA	8
+CC	7
+CT	10
+GA	7
+GC	5
+GG	8
+GT	10
+TA	29
+TC	5
+TG	7
+TT	10
